@@ -1,20 +1,20 @@
-// creating an IIFE
-// IIFE helps us to secure our data and secure our private info and variables
+// IIFE immidiately invoking functional expressions
+
 (function(){
     var hour = document.querySelector('.hour');
     var min = document.querySelector('.minute');
     var sec = document.querySelector('.second');
 
-    var startBtn = document.querySelector(".start");
-    var stopBtn = document.querySelector(".stop");
-    var resetBtn = document.querySelector(".reset");
+    var startBtn = document.querySelector('.start');
+    var stopBtn = document.querySelector('.stop');
+    var resetBtn = document.querySelector('.reset');
 
     var countdownTimer = null;
 
     function stopInterval(state){
-        startBtn.innerHTML = state==="pause" ?"Continue":"Start";
-        startBtn.style.display = "initial";
-        stopBtn.style.display = "none";
+        startBtn.innerHTML = state==="pause" ? "Continue": "Start"
+        startBtn.style.display = "initial"
+        stopBtn.style.display = "none"
 
         clearInterval(countdownTimer);
     }
@@ -38,34 +38,33 @@
         }
         if(min.value>60){
             hour.value++;
-            min.value = parseInt(min.value)-60;
+            min.value= parseInt(min.value)-60;
         }
 
-        if(hour.value ==0 && min.value== 0 && sec.value ==0){
+        if(hour.value==0  && min.value ==0 && sec.value ==0){
             hour.value=""
             min.value=""
             sec.value=""
             stopInterval();
-        }else if(sec.value != 0){
+        }else if(sec.value!=0){
             sec.value = `${sec.value<=10?"0":""}${sec.value-1}`;
-        }else if(min.value !=0 && sec.value ==0){
-            sec.value = 59;
+        }else if(min.value!=0 && sec.value==0){
+            sec.value= 59
             min.value = `${min.value<=10?"0":""}${min.value-1}`;
-        }else if(hour.value!=0 && min.value==0){
-            min.value = 60;
-            hour.value = `${hour.value<=10?"0":""}${hour.value-1}`;
+        }else if(hour.value!=0 && min.value ==0){
+            min.value = 60
+            hour.value =`${hour.value<=10?"0":""}${hour.value-1}`;
         }
     }
 
     stopBtn.addEventListener("click",()=>{
-       stopInterval("pause"); 
+        stopInterval("pause");
     })
 
-    resetBtn.addEventListener("click",()=>{
-        hour.value = ""
-        min.value = ""
-        sec.value = ""
-
+    resetBtn.addEventListener("click", function(){
+        hour.value=""
+        min.value=""
+        sec.value=""
         stopInterval();
     })
 
