@@ -1,52 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Countdown timer</title>
     <link rel="stylesheet" href="./src/styles.css" />
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <span class="container__title">Countdown Timer</span>
-        <div class="container__labels">
-            <span class="container__labels--label">Hr</span>
-            <span class="container__labels--label">Min</span>
-            <span class="container__labels--label">Sec</span>
-        </div>
-        <div class="container__inputs">
-            <input 
-            type="text"
-            oninput="this.value=this.value.slice(0,maxLength)"
-            maxlength="2"
-            placeholder="00"
-            class="container__inputs--time hour">
+      <span class="container__title">Countdown Timer</span>
+      <div class="container__labels">
+        <span class="container__labels--label">Hr</span>
+        <span class="container__labels--label">Min</span>
+        <span class="container__labels--label">Sec</span>
+      </div>
+      <div class="container__inputs">
+        <input
+          type="text"
+          oninput="this.value=this.value.slice(0,maxLength)"
+          maxlength="2"
+          placeholder="00"
+          class="container__inputs--time hour"
+        />
 
-            <p class="container__inputs--colon">:</p>
+        <p class="container__inputs--colon">:</p>
 
-            <input 
-            type="text"
-            oninput="this.value=this.value.slice(0,maxLength)"
-            maxlength="2"
-            placeholder="00"
-            class="container__inputs--time minute">
+        <input
+          type="text"
+          oninput="this.value=this.value.slice(0,maxLength)"
+          maxlength="2"
+          placeholder="00"
+          class="container__inputs--time minute"
+        />
 
-            <p class="container__inputs--colon">:</p>
+        <p class="container__inputs--colon">:</p>
 
-            <input 
-            type="text"
-            oninput="this.value=this.value.slice(0,maxLength)"
-            maxlength="2"
-            placeholder="00"
-            class="container__inputs--time second">
-
-        </div>
-        <div class="btns">
-            <button class="btns__btn start">Start</button>
-            <button class="btns__btn stop">Stop</button>
-            <button class="btns__btn reset">Reset</button>
-        </div>
+        <input
+          type="text"
+          oninput="this.value=this.value.slice(0,maxLength)"
+          maxlength="2"
+          placeholder="00"
+          class="container__inputs--time second"
+        />
+      </div>
+      <div class="btns">
+        <button class="btns__btn start">Start</button>
+        <button class="btns__btn stop">Stop</button>
+        <button class="btns__btn reset">Reset</button>
+      </div>
     </div>
     <script src="src/index.js"></script>
-</body>
+  </body>
 </html>
